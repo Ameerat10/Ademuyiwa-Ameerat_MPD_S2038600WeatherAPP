@@ -1,0 +1,27 @@
+<!-- onboarding_page_1.xml -->
+<!-- Ameerat Ademuyiwa - S2038600 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:theme="@style/AppTheme.NoActionBar">
+
+    <TextView
+        android:id="@+id/onboarding_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Onboarding Page 1"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="24dp"/>
+
+</RelativeLayout>

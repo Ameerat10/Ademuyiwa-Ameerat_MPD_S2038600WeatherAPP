@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/colorPrimary"
+    tools:context=".Activities.WeatherActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/nav_view">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="25sp" />
+
+    <LinearLayout
+        android:id="@+id/firstLinearLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/weatherIcon"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="15dp" />
+
+            <TextView
+                android:id="@+id/currentTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+        android:id="@+id/weatherConditionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25sp" />
+
+</LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/secondLinearLayout"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/firstLinearLayout"
+    android:background="@drawable/glass_background"
+    android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <!-- Image View -->
+<ImageView
+android:id="@+id/imageView"
+android:layout_width="40dp"
+android:layout_height="40dp"
+android:src="@drawable/min_temperature" />
+
+    <!-- Space between Image and Text Views -->
+<View
+android:layout_width="50dp"
+android:layout_height="match_parent" />
+
+    <!-- Text Views -->
+<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical">
+
+<TextView
+    android:id="@+id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Min Temperature"
+    android:textSize="20sp" />
+
+<TextView
+    android:id="@+id/minTempTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp" />
+</LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/thirdLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secondLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/max_temperature" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max Temperature"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/maxTempTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/fourthLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/thirdLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/wind_direction" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wind Direction"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/windDirectionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/fifthLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fourthLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/wind_speed" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wind Speed"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/windSpeedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/sixLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fifthLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/pressure" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pressure"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/pressureTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/sevenLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sixLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/humidity" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/humidityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/eightLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sevenLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/pollution" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pollution"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/pollutionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/ninthLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eightLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/visibility" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visibility"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/visibilityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/tenthLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ninthLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/sunrise" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunrise"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/sunriseTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rectangle Tile with Glass Background -->
+    <LinearLayout
+        android:id="@+id/elevenLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tenthLinearLayout"
+        android:background="@drawable/glass_background"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- Image View -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/sunset" />
+
+        <!-- Space between Image and Text Views -->
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Text Views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunset"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/sunsetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+android:id="@+id/detailsLayout"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/nav_view"
+android:layout_marginTop="16dp"
+android:orientation="vertical"
+android:padding="16dp">
+
+<TextView
+    android:id="@+id/textTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="24sp"
+    android:textStyle="bold" />
+
+<TextView
+    android:id="@+id/textDate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp" />
+
+</LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>
+
+
+    <!-- Ameerat Ademuyiwa - S2038600 -->
+
