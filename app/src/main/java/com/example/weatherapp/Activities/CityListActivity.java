@@ -15,7 +15,6 @@ import java.util.ArrayList;
 // Ameerat Ademuyiwa - S2038600
 
 
-
 public class CityListActivity extends AppCompatActivity {
 
     @Override
