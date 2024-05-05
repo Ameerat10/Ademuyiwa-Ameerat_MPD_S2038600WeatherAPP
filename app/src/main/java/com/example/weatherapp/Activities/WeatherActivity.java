@@ -23,6 +23,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.List;
 
@@ -33,6 +34,7 @@ import java.util.List;
 public class WeatherActivity extends AppCompatActivity {
 
     private int cityID;
+    private String cityName;
     private Observation observation;
     private List<Day> forecastData;
 
@@ -46,12 +48,34 @@ public class WeatherActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        // Retrieve cityID from intent extras
+        // Retrieve cityID and cityName from intent extras
         cityID = getIntent().getIntExtra("id", 0); // Default to 0 if not found
+        String cityName = getIntent().getStringExtra("name"); // Retrieve cityName
+
+//        // Display the city name
+        TextView cityNameTextView = findViewById(R.id.cityNameTextView);
+        cityNameTextView.setText(cityName);
+
+        // Find the button by its ID
+        Button mapButton = findViewById(R.id.mapButton);
+
+        // Set up the OnClickListener
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the activity_maps layout
+                Intent intent = new Intent(WeatherActivity.this, MapsActivity.class);
+                intent.putExtra("id", cityID); // Pass cityID
+                intent.putExtra("name", cityName); // Pass cityName
+                intent.putExtra("observation", (Serializable) observation); // Pass observation data
+                startActivity(intent);
+
+            }
+        });
+
         fetchObservationData();
-
-
     }
+
 
     private void fetchObservationData() {
         new ObservationData().execute();
@@ -93,9 +117,11 @@ public class WeatherActivity extends AppCompatActivity {
                 // Navigate to forecast activity
                 Intent intent = new Intent(WeatherActivity.this, ForecastActivity.class);
                 intent.putExtra("id", cityID); // Pass cityID to forecast activity
+                intent.putExtra("name", cityName); // Pass cityName to forecast activity
                 startActivity(intent);
             }
         });
+
     }
 
     private class ObservationData extends AsyncTask<Void, Void, Boolean> {

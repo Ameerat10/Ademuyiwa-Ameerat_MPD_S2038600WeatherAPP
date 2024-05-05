@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -29,6 +30,13 @@
                 android:orientation="vertical"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/cityNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
                     android:id="@+id/day"
@@ -382,6 +390,15 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
                 android:text="View 3-day Forecast" />
+
+            <Button
+                android:id="@+id/mapButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="View Map" />
+
         </LinearLayout>
 
 

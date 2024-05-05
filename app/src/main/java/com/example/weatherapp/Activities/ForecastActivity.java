@@ -31,6 +31,8 @@ import java.util.List;
 public class ForecastActivity extends AppCompatActivity {
 
     private int cityID;
+
+    private String cityName;
     private List<Day> forecastData;
     private BottomNavigationView bottomNavigationView;
 
@@ -39,6 +41,17 @@ public class ForecastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         cityID = getIntent().getIntExtra("id", 0);
+
+        // Retrieve the city name from intent extras
+        String cityName = getIntent().getStringExtra("name");
+
+        // Log the city name
+        Log.d("ForecastActivity", "City Name: " + cityName);
+
+        // Display the city name in a TextView
+        TextView cityNameTextView = findViewById(R.id.cityNameTextView);
+        cityNameTextView.setText(cityName);
+
         fetchForecastData();
 
         ActionBar actionBar = getSupportActionBar();

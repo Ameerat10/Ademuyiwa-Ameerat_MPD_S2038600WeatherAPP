@@ -3,7 +3,9 @@ package com.example.weatherapp.Models;
 
 // Ameerat Ademuyiwa - S2038600
 
-public class Observation {
+import java.io.Serializable;
+
+public class Observation implements Serializable {
     private String day;
     private String weatherCondition;
     private String temperature;
